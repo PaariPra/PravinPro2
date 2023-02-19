@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
+        </intent>
+
+        <package android:name="com.facebook.katana" />
+    </queries>
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+
+    <application
+        android:allowBackup="true"
+        android:usesCleartextTraffic="true"
+        android:icon="@mipmap/ic_logo"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.InvitationMaker">
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.invitationmaker.lss.photomaker.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_path" />
+        </provider>
+
+
+        <activity
+            android:name=".photomaker.activity.MainActivity"
+            android:screenOrientation="portrait" />
+                <activity
+                    android:name=".photomaker.main.CreateCardActivity"
+                    android:screenOrientation="portrait" />
+        <activity
+            android:name=".photomaker.main.InvitationCatActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".photomaker.activity.BaseActivity"
+            android:screenOrientation="portrait" />
+        <!--   <activity
+               android:name="com.invitationmaker.lss.photomaker.main.ShareImageActivity"
+               android:screenOrientation="portrait" />-->
+        <activity
+            android:name=".photomaker.main.BGImageActivity"
+            android:screenOrientation="portrait" />
+        <!--  <activity
+              android:name="com.invitationmaker.lss.photomaker.main.WorkDesignActivity"
+              android:screenOrientation="portrait" />-->
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+
+    </application>
+
+</manifest>
